@@ -1,0 +1,9 @@
+#include <objtools/eutils/esearch/ESearchResult.hpp>
+#include <objtools/eutils/esearch/ErrorList.hpp>
+#include <objtools/eutils/esearch/IdList.hpp>
+#include <objtools/eutils/esearch/TermSet.hpp>
+#include <objtools/eutils/esearch/Translation.hpp>
+#include <objtools/eutils/esearch/TranslationSet.hpp>
+#include <objtools/eutils/esearch/TranslationStack.hpp>
+#include <objtools/eutils/esearch/WarningList.hpp>
+#include <objtools/eutils/esearch/esearch_module.hpp>

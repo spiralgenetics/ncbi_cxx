@@ -1,0 +1,19 @@
+To import a distribution of ncbi, we do the following:
+
+* Configure ncbi as normal with:
+./configure --without-boost --without-debug --with-symbols
+
+* Compile ncbi
+
+* Save all generated .cpp and .hpp files; wipe the rest of the files
+built with the ncbi build system
+
+* cp src/app/blast/blast_app_util.hpp include/
+
+* Run ./spiral_generate_build.pl to generate bazel BUILD files
+
+* Run buildifier -v on all generated BUILD Files to make them pretty
+
+(Note by nils: I ran into a problem with an ambiguous "isnan" in some
+files.  I fixed it by changing "isnan" to "::isnan".  Hopefully this
+problem should go away in later versions of something.)

@@ -164,14 +164,14 @@ void CObjectOStreamAsn::WriteUint8(Uint8 data)
 void CObjectOStreamAsn::WriteDouble2(double data, size_t digits)
 {
 #if 1
-    if (isnan(data)) {
+	if (::isnan(data)) {
         ThrowError(fInvalidData, "invalid double: not a number");
     }
     if (!finite(data)) {
         ThrowError(fInvalidData, "invalid double: infinite");
     }
 #else
-    if (isnan(data)) {
+    if (::isnan(data)) {
         m_Output.PutString("NOT-A-NUMBER");
         return;
     }

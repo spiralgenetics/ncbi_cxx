@@ -1,0 +1,9 @@
+#include <algo/gnomon/Exon_params.hpp>
+#include <algo/gnomon/Gnomon_param.hpp>
+#include <algo/gnomon/Gnomon_params.hpp>
+#include <algo/gnomon/Intergenic_params.hpp>
+#include <algo/gnomon/Intron_params.hpp>
+#include <algo/gnomon/Length_distribution_params.hpp>
+#include <algo/gnomon/Markov_chain_array.hpp>
+#include <algo/gnomon/Markov_chain_params.hpp>
+#include <algo/gnomon/NCBI_GNOMON_module.hpp>

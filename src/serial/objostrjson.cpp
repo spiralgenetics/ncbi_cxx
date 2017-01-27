@@ -181,7 +181,7 @@ void CObjectOStreamJson::WriteDouble(double data)
 
 void CObjectOStreamJson::WriteDouble2(double data, size_t digits)
 {
-    if (isnan(data)) {
+	if (std::isnan(data)) {
         ThrowError(fInvalidData, "invalid double: not a number");
     }
     if (!finite(data)) {

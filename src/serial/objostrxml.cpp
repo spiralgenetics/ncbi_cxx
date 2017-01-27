@@ -602,7 +602,7 @@ void CObjectOStreamXml::WriteDouble2(double data, size_t digits)
         x_WriteAsDefault();
         return;
     }
-    if (isnan(data)) {
+    if (::isnan(data)) {
         m_Output.PutString("NaN", 3);
         return;
     }

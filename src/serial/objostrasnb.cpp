@@ -667,14 +667,14 @@ void CObjectOStreamAsnBinary::WriteDouble2(double data, size_t digits)
     int width;
 
 #if 1
-    if (isnan(data)) {
+    if (::isnan(data)) {
         ThrowError(fInvalidData, "invalid double: not a number");
     }
     if (!finite(data)) {
         ThrowError(fInvalidData, "invalid double: infinite");
     }
 #else
-    if (isnan(data)) {
+    if (::isnan(data)) {
         strncpy(buffer,"NOT-A-NUMBER", width = 12);
     } else if (!finite(data)) {
         if (data > 0) {

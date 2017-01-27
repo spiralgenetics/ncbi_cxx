@@ -1,0 +1,9 @@
+#include <ncbi_pch.hpp>
+#include "Comment_rule_.cpp"
+#include "Comment_set_.cpp"
+#include "Dependent_field_rule_.cpp"
+#include "Dependent_field_set_.cpp"
+#include "Field_rule_.cpp"
+#include "Field_set_.cpp"
+#include "Severity_level_.cpp"
+#include "NCBI_Structured_comment_validation_module.cpp"

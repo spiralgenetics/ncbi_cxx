@@ -1,0 +1,10 @@
+#include <ncbi_pch.hpp>
+#include "ESearchResult_.cpp"
+#include "ErrorList_.cpp"
+#include "IdList_.cpp"
+#include "TermSet_.cpp"
+#include "Translation_.cpp"
+#include "TranslationSet_.cpp"
+#include "TranslationStack_.cpp"
+#include "WarningList_.cpp"
+#include "esearch_module.cpp"

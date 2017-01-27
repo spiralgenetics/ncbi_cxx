@@ -1,0 +1,9 @@
+#include <ncbi_pch.hpp>
+#include "ESearchResult.cpp"
+#include "ErrorList.cpp"
+#include "IdList.cpp"
+#include "TermSet.cpp"
+#include "Translation.cpp"
+#include "TranslationSet.cpp"
+#include "TranslationStack.cpp"
+#include "WarningList.cpp"
