@@ -2,9 +2,19 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "ncbi_xreader_gicache",
+    name = "gicache",
     srcs = [
         "gicache.c",
         "reader_gicache.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

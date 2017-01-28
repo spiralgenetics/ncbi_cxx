@@ -9,4 +9,14 @@ ncbi_library(
         "testenv.cpp",
         "testrunner.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

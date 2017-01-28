@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "magic",
+    name = "libmagic",
     srcs = [
         "apprentice.c",
         "apptype.c",
@@ -20,4 +20,14 @@ ncbi_library(
         "readelf.c",
         "softmagic.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

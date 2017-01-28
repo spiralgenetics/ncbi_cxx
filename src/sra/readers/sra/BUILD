@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "sraread",
+    name = "sra",
     srcs = [
         "csraread.cpp",
         "graphread.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "vdbread.cpp",
         "wgsread.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,9 +2,19 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "ncbi_xloader_vdbgraph",
+    name = "vdbgraph",
     srcs = [
         "vdbgraphloader.cpp",
         "vdbgraphloader_impl.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,6 +2,16 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xobjsimple",
+    name = "simple",
     srcs = ["simple_om.cpp"],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

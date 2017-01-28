@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xobjwrite",
+    name = "writers",
     srcs = [
         "agp_write.cpp",
         "bed_feature_record.cpp",
@@ -22,4 +22,14 @@ ncbi_library(
         "wiggle_writer.cpp",
         "write_util.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

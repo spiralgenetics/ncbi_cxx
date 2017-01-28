@@ -8,6 +8,8 @@ ncbi_library(
         "annot.cpp",
         "asn1.cpp",
         "chainer.cpp",
+        "gnomon__.cpp",
+        "gnomon___.cpp",
         "gnomon_engine.cpp",
         "gnomon_model.cpp",
         "gnomon_objmgr.cpp",
@@ -18,4 +20,14 @@ ncbi_library(
         "score.cpp",
         "select_alignments_alt.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

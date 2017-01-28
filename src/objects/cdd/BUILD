@@ -7,4 +7,28 @@ ncbi_library(
         "cdd__.cpp",
         "cdd___.cpp",
     ],
+    deps = [
+        "//src/objects/biblio",
+        "//src/objects/cn3d",
+        "//src/objects/general",
+        "//src/objects/mmdb1",
+        "//src/objects/mmdb2",
+        "//src/objects/mmdb3",
+        "//src/objects/pub",
+        "//src/objects/scoremat",
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

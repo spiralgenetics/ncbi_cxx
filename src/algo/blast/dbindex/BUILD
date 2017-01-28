@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoblastdbindex",
+    name = "dbindex",
     srcs = [
         "dbindex.cpp",
         "dbindex_factory.cpp",
@@ -10,4 +10,14 @@ ncbi_library(
         "sequence_istream_bdb.cpp",
         "sequence_istream_fasta.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

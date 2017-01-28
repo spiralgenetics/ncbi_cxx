@@ -2,9 +2,19 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "ncbi_xcache_dbapi",
+    name = "cache",
     srcs = [
         "dbapi_blob_cache.cpp",
         "dbapi_blob_cache_cf.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

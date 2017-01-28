@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xstruct_thread",
+    name = "threader",
     srcs = [
         "thrdalgs.c",
         "thrdatd.c",
@@ -28,4 +28,14 @@ ncbi_library(
         "thrdttbi.c",
         "thrdzsc.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

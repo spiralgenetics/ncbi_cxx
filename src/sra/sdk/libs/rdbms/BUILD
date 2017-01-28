@@ -7,4 +7,14 @@ ncbi_library(
         "rdbms.c",
         "sybase.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

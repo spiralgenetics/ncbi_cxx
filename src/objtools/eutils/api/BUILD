@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "eutils",
+    name = "api",
     srcs = [
         "efetch.cpp",
         "egquery.cpp",
@@ -15,4 +15,14 @@ ncbi_library(
         "esummary.cpp",
         "eutils.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -7,4 +7,20 @@ ncbi_library(
         "variation__.cpp",
         "variation___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/pub",
+        "//src/objects/seq",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

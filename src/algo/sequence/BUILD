@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoseq",
+    name = "sequence",
     srcs = [
         "align_cleanup.cpp",
         "align_group.cpp",
@@ -26,4 +26,14 @@ ncbi_library(
         "transform_align.cpp",
         "util.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

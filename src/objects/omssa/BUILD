@@ -7,4 +7,14 @@ ncbi_library(
         "omssa__.cpp",
         "omssa___.cpp",
     ],
+    deps = ["//src/objects/seq"],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

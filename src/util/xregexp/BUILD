@@ -8,4 +8,14 @@ ncbi_library(
         "mask_regexp.cpp",
         "regexp.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,10 +2,41 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "xnetblastcli",
+    srcs = [
+        "blastclient.cpp",
+        "blastclient_.cpp",
+    ],
+    deps = [
+        "//src/objects/scoremat",
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqloc",
+        "//src/objects/seqset",
+    ],
+)
+
+ncbi_library(
     name = "blast",
     srcs = [
         "blast__.cpp",
         "blast___.cpp",
         "names.cpp",
     ],
+    deps = [
+        "//src/objects/scoremat",
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqloc",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

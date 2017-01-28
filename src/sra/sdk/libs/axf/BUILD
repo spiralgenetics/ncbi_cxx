@@ -29,4 +29,46 @@ ncbi_library(
         "template-len.c",
         "universe.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "waxf",
+    srcs = [
+        "align-local_ref_id.c",
+        "align-local_ref_start.c",
+        "align-ref-name.c",
+        "align-ref-pos.c",
+        "align-ref-seq-id.c",
+        "align-restore-read.c",
+        "cigar.c",
+        "generate-mismatch-qual.c",
+        "get-sam-flags.c",
+        "get_mate_align_ids.c",
+        "make-cmp-read_desc.c",
+        "mismatch-restore-qual.c",
+        "not-my-row.c",
+        "project_read_from_sequence.c",
+        "raw-restore-qual.c",
+        "raw-restore-read.c",
+        "ref-preserve_qual.c",
+        "ref-restore-read.c",
+        "ref-tbl.c",
+        "ref-tbl-sub-select.c",
+        "refseq-stats.c",
+        "seq-construct-read.c",
+        "seq-restore-read.c",
+        "template-len.c",
+        "wuniverse.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

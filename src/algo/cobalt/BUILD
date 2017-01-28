@@ -3,5 +3,35 @@ load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
     name = "cobalt",
-    srcs = [],
+    srcs = [
+        "blast.cpp",
+        "clusterer.cpp",
+        "cobalt.cpp",
+        "dist.cpp",
+        "hit.cpp",
+        "hitlist.cpp",
+        "kmercounts.cpp",
+        "links.cpp",
+        "options.cpp",
+        "patterns.cpp",
+        "phi.cpp",
+        "prog.cpp",
+        "resfreq.cpp",
+        "rps.cpp",
+        "seg.cpp",
+        "seq.cpp",
+        "seqalign.cpp",
+        "traceback.cpp",
+        "tree.cpp",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

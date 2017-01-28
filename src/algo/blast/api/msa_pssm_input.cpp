@@ -40,7 +40,7 @@ static char const rcsid[] =
 // BLAST includes
 #include <algo/blast/api/msa_pssm_input.hpp>
 #include <algo/blast/api/blast_exception.hpp>
-#include "../core/blast_psi_priv.h"         // for kQueryIndex
+#include "algo/blast/core/blast_psi_priv.h"         // for kQueryIndex
 
 // Objtools includes
 #include <objtools/readers/aln_reader.hpp>  // for CAlnReader

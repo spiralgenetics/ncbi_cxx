@@ -11,4 +11,14 @@ ncbi_library(
         "reference-writer.c",
         "sequence-writer.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

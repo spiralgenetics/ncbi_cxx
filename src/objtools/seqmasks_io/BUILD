@@ -14,4 +14,14 @@ ncbi_library(
         "mask_writer_seqloc.cpp",
         "mask_writer_tab.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

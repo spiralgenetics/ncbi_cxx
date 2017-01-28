@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xcd_utils",
+    name = "cd_utils",
     srcs = [
         "cuAlign.cpp",
         "cuAlignedDM.cpp",
@@ -60,4 +60,14 @@ ncbi_library(
         "cuTaxTree.cpp",
         "cuUtils.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

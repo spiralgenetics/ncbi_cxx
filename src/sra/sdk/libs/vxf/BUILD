@@ -2,6 +2,60 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "wvxf",
+    srcs = [
+        "add-row-id.c",
+        "bit_or.c",
+        "bunzip.c",
+        "bzip.c",
+        "ceil.c",
+        "checksum.c",
+        "clip.c",
+        "cut.c",
+        "delta.c",
+        "deriv.c",
+        "diff.c",
+        "echo.c",
+        "exists.c",
+        "extract_token.c",
+        "floor.c",
+        "funzip.c",
+        "fzip.c",
+        "integral.c",
+        "irzip.c",
+        "iunzip.c",
+        "izip.c",
+        "lower-case-tech-reads.c",
+        "map.c",
+        "max.c",
+        "min.c",
+        "outlier-decoder.c",
+        "outlier-encoder.c",
+        "pack.c",
+        "paste.c",
+        "rand_4na_2na.c",
+        "rldecode.c",
+        "rlencode.c",
+        "round.c",
+        "simple-sub-select.c",
+        "sprintf.c",
+        "strtonum.c",
+        "subtract-row-id.c",
+        "sum.c",
+        "trim.c",
+        "trunc.c",
+        "undelta.c",
+        "unpack.c",
+        "unzip.c",
+        "vec-sum.c",
+        "wgs-tokenize-accession.c",
+        "wuniverse.c",
+        "zip.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "vxf",
     srcs = [
         "add-row-id.c",
@@ -47,4 +101,23 @@ ncbi_library(
         "vec-sum.c",
         "wgs-tokenize-accession.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "vxfentrez",
+    srcs = [
+        "entrez.c",
+        "ezuniverse.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -9,6 +9,12 @@ genrule(
 )
 
 ncbi_library(
+    name = "test_boost",
+    srcs = ["test_boost.cpp"],
+    deps = [],
+)
+
+ncbi_library(
     name = "corelib",
     srcs = [
         "blob_storage.cpp",
@@ -19,6 +25,7 @@ ncbi_library(
         "metareg.cpp",
         "ncbi_autoinit.cpp",
         "ncbi_config.cpp",
+        "ncbi_os_unix.cpp",
         "ncbi_param.cpp",
         "ncbi_process.cpp",
         "ncbi_safe_static.cpp",
@@ -60,4 +67,20 @@ ncbi_library(
         "syslog.cpp",
         "version.cpp",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "test_mt",
+    srcs = ["test_mt.cpp"],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

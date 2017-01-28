@@ -9,4 +9,14 @@ ncbi_library(
         "cav_function.cpp",
         "cav_seqset.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

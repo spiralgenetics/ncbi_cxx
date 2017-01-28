@@ -10,4 +10,25 @@ ncbi_library(
         "progressbar.c",
         "queue-file.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "kapp",
+    srcs = [
+        "args.c",
+        "main.c",
+        "sysmain.c",
+        "tokenizer.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

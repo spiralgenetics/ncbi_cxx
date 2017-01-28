@@ -10,13 +10,13 @@ cc_library(
     ]) + [
         ":ncbiconf_unix_h",
     ],
-    includes = ["./include"],
+    includes = ["./include", "./src"],
     visibility = ["//:__subpackages__"],
 )
 
-filegroup(
+cc_library(
     name = "src_headers",
-    srcs = glob([
+    hdrs = glob([
         "src/**/*.h",
         "src/**/*.hpp",
     ]),

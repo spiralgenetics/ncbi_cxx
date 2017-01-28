@@ -2,6 +2,49 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "wsraxf",
+    srcs = [
+        "bio-start.c",
+        "color-from-dna.c",
+        "denormalize.c",
+        "dna-from-color.c",
+        "dynamic-454-read-descriptor.c",
+        "extract-coordinates.c",
+        "extract-name_coord.c",
+        "extract-name_fmt.c",
+        "extract-spot_name.c",
+        "format-spot-name.c",
+        "fpcodec.c",
+        "index_lookup.c",
+        "make-position.c",
+        "normalize.c",
+        "process-position.c",
+        "qual4_decode.c",
+        "qual4_encode.c",
+        "read-desc.c",
+        "read-seg-from-readn.c",
+        "rewrite-spot-name.c",
+        "rotate.c",
+        "spot-desc.c",
+        "stats.c",
+        "stats_quality.c",
+        "swap.c",
+        "tokenize-spot_name-454.c",
+        "tokenize-spot_name-abi.c",
+        "tokenize-spot_name-helicos.c",
+        "tokenize-spot_name-illumina.c",
+        "tokenize-spot_name-ion-torrent.c",
+        "untyped.c",
+        "v0-decompress.c",
+        "v0-decompress-init.c",
+        "v0-funcs.c",
+        "varloc.c",
+        "wuniverse.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "sraxf",
     srcs = [
         "bio-start.c",
@@ -36,4 +79,14 @@ ncbi_library(
         "v0-funcs.c",
         "varloc.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

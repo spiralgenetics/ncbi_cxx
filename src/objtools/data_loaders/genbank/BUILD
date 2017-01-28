@@ -7,4 +7,34 @@ ncbi_library(
         "gbload_util.cpp",
         "gbloader.cpp",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "ncbi_xreader",
+    srcs = [
+        "blob_id.cpp",
+        "dispatcher.cpp",
+        "incr_time.cpp",
+        "processors.cpp",
+        "reader.cpp",
+        "reader_id1_base.cpp",
+        "reader_id2_base.cpp",
+        "reader_service.cpp",
+        "reader_snp.cpp",
+        "request_result.cpp",
+        "seqref.cpp",
+        "split_parser.cpp",
+        "writer.cpp",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

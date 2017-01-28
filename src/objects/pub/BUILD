@@ -7,4 +7,18 @@ ncbi_library(
         "pub__.cpp",
         "pub___.cpp",
     ],
+    deps = [
+        "//src/objects/biblio",
+        "//src/objects/general",
+        "//src/objects/medline",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

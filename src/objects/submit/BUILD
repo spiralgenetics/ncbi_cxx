@@ -7,4 +7,20 @@ ncbi_library(
         "submit__.cpp",
         "submit___.cpp",
     ],
+    deps = [
+        "//src/objects/biblio",
+        "//src/objects/general",
+        "//src/objects/seq",
+        "//src/objects/seqloc",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,6 +2,15 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "cserial",
+    srcs = [
+        "asntypes.cpp",
+        "serialasn.cpp",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "serial",
     srcs = [
         "aliasinfo.cpp",
@@ -51,4 +60,14 @@ ncbi_library(
         "typeref.cpp",
         "variant.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -79,4 +79,14 @@ ncbi_library(
         "tse_split_info.cpp",
         "unsupp_editsaver.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -7,4 +7,14 @@ ncbi_library(
         "seqcode__.cpp",
         "seqcode___.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

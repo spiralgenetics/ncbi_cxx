@@ -2,6 +2,87 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "connect",
+    srcs = [
+        "ncbi_ansi_ext.c",
+        "ncbi_base64.c",
+        "ncbi_buffer.c",
+        "ncbi_connection.c",
+        "ncbi_connector.c",
+        "ncbi_connutil.c",
+        "ncbi_core.c",
+        "ncbi_dispd.c",
+        "ncbi_file_connector.c",
+        "ncbi_ftp_connector.c",
+        "ncbi_heapmgr.c",
+        "ncbi_host_info.c",
+        "ncbi_http_connector.c",
+        "ncbi_lb.c",
+        "ncbi_lbsmd_stub.c",
+        "ncbi_local.c",
+        "ncbi_memory_connector.c",
+        "ncbi_priv.c",
+        "ncbi_sendmail.c",
+        "ncbi_server_info.c",
+        "ncbi_service.c",
+        "ncbi_service_connector.c",
+        "ncbi_socket.c",
+        "ncbi_socket_connector.c",
+        "ncbi_types.c",
+        "ncbi_util.c",
+        "ncbi_version.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "connssl",
+    srcs = ["ncbi_gnutls.c"],
+    deps = [],
+)
+
+ncbi_library(
+    name = "xxconnect",
+    srcs = [
+        "email_diag_handler.cpp",
+        "ncbi_conn_reader_writer.cpp",
+        "ncbi_conn_stream.cpp",
+        "ncbi_conn_streambuf.cpp",
+        "ncbi_conn_test.cpp",
+        "ncbi_core_cxx.cpp",
+        "ncbi_misc.cpp",
+        "ncbi_namedpipe.cpp",
+        "ncbi_namedpipe_connector.cpp",
+        "ncbi_pipe.cpp",
+        "ncbi_pipe_connector.cpp",
+        "ncbi_socket_cxx.cpp",
+        "ncbi_userhost.cpp",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "xconnect",
-    srcs = [],
+    srcs = ["ncbi_lbsmd_stub.c"],
+    deps = [],
+)
+
+ncbi_library(
+    name = "xthrserv",
+    srcs = [
+        "connection_pool.cpp",
+        "server.cpp",
+        "server_monitor.cpp",
+        "threaded_server.cpp",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

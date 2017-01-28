@@ -3,5 +3,34 @@ load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
     name = "blastinput",
-    srcs = [],
+    srcs = [
+        "blast_args.cpp",
+        "blast_fasta_input.cpp",
+        "blast_input.cpp",
+        "blast_input_aux.cpp",
+        "blast_scope_src.cpp",
+        "blastn_args.cpp",
+        "blastp_args.cpp",
+        "blastx_args.cpp",
+        "cmdline_flags.cpp",
+        "deltablast_args.cpp",
+        "igblastn_args.cpp",
+        "igblastp_args.cpp",
+        "psiblast_args.cpp",
+        "rmblastn_args.cpp",
+        "rpsblast_args.cpp",
+        "rpstblastn_args.cpp",
+        "tblastn_args.cpp",
+        "tblastx_args.cpp",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

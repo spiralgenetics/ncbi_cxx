@@ -2,10 +2,30 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "wwgsxf",
+    srcs = [
+        "build_read_type.c",
+        "build_scaffold.c",
+        "wuniverse.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "wgsxf",
     srcs = [
         "build_read_type.c",
         "build_scaffold.c",
         "universe.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "task_server",
+    name = "netcache",
     srcs = [
         "logging.cpp",
         "memory_man.cpp",
@@ -18,4 +18,14 @@ ncbi_library(
         "time_man.cpp",
         "timers.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

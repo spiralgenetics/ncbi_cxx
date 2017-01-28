@@ -57,7 +57,7 @@
 #endif
 
 #ifdef NCBI_OS_UNIX
-#  include "../../../corelib/ncbi_os_unix_p.hpp"
+#  include "corelib/ncbi_os_unix_p.hpp"
 #  include <grp.h>
 #  include <pwd.h>
 #  include <unistd.h>

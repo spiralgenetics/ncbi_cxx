@@ -7,4 +7,14 @@ ncbi_library(
         "blastdb__.cpp",
         "blastdb___.cpp",
     ],
+    deps = ["//src/objects/seqloc"],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

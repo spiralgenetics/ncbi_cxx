@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "writedb",
+    name = "seqdb_writer",
     srcs = [
         "build_db.cpp",
         "mask_info_registry.cpp",
@@ -18,4 +18,14 @@ ncbi_library(
         "writedb_isam.cpp",
         "writedb_volume.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

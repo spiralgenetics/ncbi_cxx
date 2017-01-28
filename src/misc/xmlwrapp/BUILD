@@ -30,4 +30,14 @@ ncbi_library(
         "xpath_object.cpp",
         "xslt_init.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -7,4 +7,19 @@ ncbi_library(
         "entrezgene__.cpp",
         "entrezgene___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/pub",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

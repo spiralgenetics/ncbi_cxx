@@ -7,4 +7,22 @@ ncbi_library(
         "seqedit__.cpp",
         "seqedit___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+        "//src/objects/seqres",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "ncbi_xdbapi_odbc",
+    name = "odbc",
     srcs = [
         "connection.cpp",
         "context.cpp",
@@ -12,4 +12,14 @@ ncbi_library(
         "result.cpp",
         "rpc.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

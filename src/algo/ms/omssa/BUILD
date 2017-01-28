@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xomssa",
+    name = "omssa",
     srcs = [
         "Mod.cpp",
         "SpectrumSet.cpp",
@@ -15,4 +15,14 @@ ncbi_library(
         "omssascore.cpp",
         "pepxml.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

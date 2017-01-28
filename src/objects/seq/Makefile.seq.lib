@@ -13,3 +13,6 @@ SRC = $(ASN:%=%__) $(ASN:%=%___) seqport_util \
       seq_loc_from_string seq_loc_reverse_complementer
 
 WATCHERS = vasilche grichenk
+
+p:
+	echo $(SRC)

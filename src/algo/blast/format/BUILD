@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xblastformat",
+    name = "format",
     srcs = [
         "blast_format.cpp",
         "blastfmtutil.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "data4xmlformat.cpp",
         "vecscreen_run.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

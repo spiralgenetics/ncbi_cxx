@@ -7,4 +7,24 @@ ncbi_library(
         "bdbloader_rmt.cpp",
         "remote_blastdb_adapter.cpp",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "ncbi_xloader_blastdb",
+    srcs = [
+        "bdbloader.cpp",
+        "cached_sequence.cpp",
+        "local_blastdb_adapter.cpp",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

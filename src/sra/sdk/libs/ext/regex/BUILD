@@ -4,4 +4,14 @@ load("//:ncbi_cxx.bzl", "ncbi_library")
 ncbi_library(
     name = "regex",
     srcs = ["xregex.c"],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

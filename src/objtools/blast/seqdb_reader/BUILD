@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "seqdb",
+    name = "seqdb_reader",
     srcs = [
         "seqdb.cpp",
         "seqdbalias.cpp",
@@ -24,4 +24,14 @@ ncbi_library(
         "seqdbvol.cpp",
         "seqdbvolset.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

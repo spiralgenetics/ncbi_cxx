@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "kurl",
+    name = "kns",
     srcs = [
         "KCurlFile.c",
         "KCurlRequest.c",
@@ -11,4 +11,14 @@ ncbi_library(
         "url-fetcher.c",
         "url-fetcher-curl.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

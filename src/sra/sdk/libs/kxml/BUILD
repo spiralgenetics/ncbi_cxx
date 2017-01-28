@@ -7,4 +7,20 @@ ncbi_library(
         "xtoc.c",
         "xtoc-parsexml.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "kxml",
+    srcs = ["xml.c"],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

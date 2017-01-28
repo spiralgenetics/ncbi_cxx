@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "ksrch",
+    name = "search",
     srcs = [
         "agrep-dp.c",
         "agrep-myers.c",
@@ -14,4 +14,14 @@ ncbi_library(
         "nucstrstr-generic.c",
         "search.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

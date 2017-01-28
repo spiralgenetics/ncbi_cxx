@@ -26,4 +26,41 @@ ncbi_library(
         "testcipher.c",
         "wgaencrypt.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "krypto",
+    srcs = [
+        "aes-byte.c",
+        "aes-ncbi.aes-ni.c",
+        "aes-ncbi.vec.c",
+        "aes-ncbi.vecreg.c",
+        "aes_core.c",
+        "cipher.c",
+        "cipher-byte.c",
+        "cipher-vec.aes-ni.c",
+        "cipher-vec.vec.c",
+        "cipher-vec.vecreg.c",
+        "ciphermgr.c",
+        "encfile.c",
+        "encfilev2.c",
+        "key.c",
+        "no-null-ncbi.aes-ni.c",
+        "no-null-ncbi.c",
+        "no-null-ncbi.vec.c",
+        "no-null-ncbi.vecreg.c",
+        "reencfile.c",
+        "wgaencrypt.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

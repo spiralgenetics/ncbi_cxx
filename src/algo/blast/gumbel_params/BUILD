@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "gumbelparams",
+    name = "gumbel_params",
     srcs = [
         "general_score_matrix.cpp",
         "gumbel_params.cpp",
@@ -23,4 +23,14 @@ ncbi_library(
         "sls_normal_distr_array.cpp",
         "sls_pvalues.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

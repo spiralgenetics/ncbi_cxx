@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xngalign",
+    name = "ngalign",
     srcs = [
         "alignment_filterer.cpp",
         "alignment_scorer.cpp",
@@ -15,4 +15,14 @@ ncbi_library(
         "sequence_set.cpp",
         "unordered_spliter.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

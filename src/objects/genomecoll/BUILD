@@ -2,9 +2,30 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "gencoll_client",
+    srcs = [
+        "gencoll_client__.cpp",
+        "gencoll_client___.cpp",
+        "genomic_collections_cli.cpp",
+        "genomic_collections_cli_.cpp",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "genome_collection",
     srcs = [
         "genome_collection__.cpp",
         "genome_collection___.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

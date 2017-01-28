@@ -8,4 +8,19 @@ ncbi_library(
         "seqset__.cpp",
         "seqset___.cpp",
     ],
+    deps = [
+        "//src/objects/biblio",
+        "//src/objects/general",
+        "//src/objects/medline",
+        "//src/objects/seq",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

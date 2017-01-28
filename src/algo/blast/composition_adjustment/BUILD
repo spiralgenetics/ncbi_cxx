@@ -3,5 +3,25 @@ load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
     name = "composition_adjustment",
-    srcs = [],
+    srcs = [
+        "compo_heap.c",
+        "compo_mode_condition.c",
+        "composition_adjustment.c",
+        "matrix_frequency_data.c",
+        "nlm_linear_algebra.c",
+        "optimize_target_freq.c",
+        "redo_alignment.c",
+        "smith_waterman.c",
+        "unified_pvalues.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

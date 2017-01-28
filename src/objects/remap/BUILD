@@ -7,4 +7,23 @@ ncbi_library(
         "remap__.cpp",
         "remap___.cpp",
     ],
+    deps = ["//src/objects/seqloc"],
+)
+
+ncbi_library(
+    name = "remapcli",
+    srcs = [
+        "remap_client.cpp",
+        "remap_client_.cpp",
+    ],
+    deps = ["//src/objects/seqloc"],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

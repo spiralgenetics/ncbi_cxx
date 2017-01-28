@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgophytree",
+    name = "phy_tree",
     srcs = [
         "bio_tree.cpp",
         "dist_methods.cpp",
@@ -12,4 +12,14 @@ ncbi_library(
         "phytree_calc.cpp",
         "tree_to_dist_mat.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

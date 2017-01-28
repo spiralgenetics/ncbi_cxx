@@ -7,4 +7,18 @@ ncbi_library(
         "homologene__.cpp",
         "homologene___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/seqalign",
+        "//src/objects/seqloc",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

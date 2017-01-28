@@ -2,6 +2,18 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "ncbi_xblobstorage_netcache",
+    srcs = ["blob_storage_netcache.cpp"],
+    deps = [],
+)
+
+ncbi_library(
+    name = "ncbi_xcache_netcache",
+    srcs = ["neticache_client.cpp"],
+    deps = [],
+)
+
+ncbi_library(
     name = "xconnserv",
     srcs = [
         "balancing.cpp",
@@ -33,4 +45,14 @@ ncbi_library(
         "util.cpp",
         "wn_commit_thread.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

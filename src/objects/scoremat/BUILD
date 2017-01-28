@@ -7,4 +7,17 @@ ncbi_library(
         "scoremat__.cpp",
         "scoremat___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

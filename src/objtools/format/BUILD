@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xformat",
+    name = "format",
     srcs = [
         "accession_item.cpp",
         "alignment_item.cpp",
@@ -57,4 +57,14 @@ ncbi_library(
         "version_item.cpp",
         "wgs_item.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

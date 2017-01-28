@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoseqqa",
+    name = "seqqa",
     srcs = [
         "blastp_tests.cpp",
         "prot_prod_tests.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "single_aln_tests.cpp",
         "xcript_tests.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

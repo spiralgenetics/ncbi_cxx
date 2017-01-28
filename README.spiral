@@ -8,7 +8,12 @@ To import a distribution of ncbi, we do the following:
 * Save all generated .cpp and .hpp files; wipe the rest of the files
 built with the ncbi build system
 
-* cp src/app/blast/blast_app_util.hpp include/
+* cp src/app/blast/blast_app_util.hpp include/.  (spiral's gbwt/blast
+includes this file)
+
+* Add minimal makefiles in "seqloc" and "seqfeat", since they're
+  missing and I don't undertand how it figures out which source files
+  to include.
 
 * Run ./spiral_generate_build.pl to generate bazel BUILD files
 

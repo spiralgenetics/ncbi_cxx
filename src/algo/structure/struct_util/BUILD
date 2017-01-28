@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xstruct_util",
+    name = "struct_util",
     srcs = [
         "aaa_dummy_pch.cpp",
         "struct_util.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "su_pssm.cpp",
         "su_sequence_set.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

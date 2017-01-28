@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "compress",
+    name = "api",
     srcs = [
         "bzip2.cpp",
         "compress.cpp",
@@ -14,4 +14,17 @@ ncbi_library(
         "tar.cpp",
         "zlib.cpp",
     ],
+    more_deps = [
+        "//src/corelib:src_headers",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoalignnw",
+    name = "nw",
     srcs = [
         "mm_aligner.cpp",
         "mm_aligner_threads.cpp",
@@ -15,4 +15,14 @@ ncbi_library(
         "nw_spliced_aligner16.cpp",
         "nw_spliced_aligner32.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

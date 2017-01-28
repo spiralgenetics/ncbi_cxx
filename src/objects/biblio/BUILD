@@ -8,4 +8,14 @@ ncbi_library(
         "biblio___.cpp",
         "citation_base.cpp",
     ],
+    deps = ["//src/objects/general"],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

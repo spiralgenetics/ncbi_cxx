@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoalignsplign",
+    name = "splign",
     srcs = [
         "compart_matching.cpp",
         "splign.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "splign_simple.cpp",
         "splign_util.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

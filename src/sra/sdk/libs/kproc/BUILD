@@ -13,4 +13,34 @@ ncbi_library(
         "sttimeout.c",
         "task.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "kq",
+    srcs = ["queue.c"],
+    deps = [],
+)
+
+ncbi_library(
+    name = "kproc",
+    srcs = [
+        "procmgr.c",
+        "syscond.c",
+        "syslock.c",
+        "systhread.c",
+        "systimeout.c",
+        "task.c",
+        "xsem.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

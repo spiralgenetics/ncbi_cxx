@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "hgvs_parser",
+    name = "hgvs",
     srcs = [
         "hgvs_parser2.cpp",
         "hgvs_writer2.cpp",
@@ -11,4 +11,14 @@ ncbi_library(
         "sequtils.cpp",
         "variation_util2.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

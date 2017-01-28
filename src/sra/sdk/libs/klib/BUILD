@@ -2,6 +2,59 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "klib",
+    srcs = [
+        "SHA-32bit.c",
+        "SHA-64bit.c",
+        "bsearch.c",
+        "bstpersist.c",
+        "container.c",
+        "cp1252.c",
+        "crc32.c",
+        "data-buffer.c",
+        "iso8859.c",
+        "iso8859-1.c",
+        "judy-vector.c",
+        "ksort.c",
+        "log.c",
+        "md5.c",
+        "namelist.c",
+        "out.c",
+        "pack.c",
+        "pbstree.c",
+        "pbstree-native.c",
+        "pbstree-swapped.c",
+        "printf.c",
+        "ptpersist.c",
+        "ptrie.c",
+        "qsort.c",
+        "rc-idx-tbl.c",
+        "rc-tbl.c",
+        "refcount.c",
+        "report.c",
+        "status.c",
+        "status-rc.c",
+        "status-rc-strings.c",
+        "symtab.c",
+        "syserrcode.c",
+        "syslog.c",
+        "systime.c",
+        "syswriter.c",
+        "text.c",
+        "token.c",
+        "trie.c",
+        "unpack.c",
+        "utf8.c",
+        "vector.c",
+        "vector_namelist.c",
+        "vlen-encode.c",
+        "writer.c",
+        "xdebug.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "judy",
     srcs = [
         "Judy1Tables_b.c",
@@ -50,4 +103,14 @@ ncbi_library(
         "j__udyGet_b.c",
         "j__udyGet_w.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

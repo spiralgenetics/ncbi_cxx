@@ -16,4 +16,14 @@ ncbi_library(
         "image_io_tiff.cpp",
         "image_util.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

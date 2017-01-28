@@ -2,6 +2,18 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "srareader",
+    srcs = [
+        "reader-abi.c",
+        "reader-cmn.c",
+        "reader-fastq.c",
+        "reader-illumina.c",
+        "reader-sff.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "sradb",
     srcs = [
         "sracol.c",
@@ -11,4 +23,47 @@ ncbi_library(
         "sratbl-cmn.c",
         "types.c",
     ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "wsraschema",
+    srcs = [
+        "sra-schema.c",
+        "sraschema.c",
+        "wsraschema-stub.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "wsradb",
+    srcs = [
+        "sracol.c",
+        "sramgr-cmn.c",
+        "sratbl-cmn.c",
+        "types.c",
+        "wsramgr.c",
+        "wsratbl.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
+    name = "sraschema",
+    srcs = [
+        "sra-schema.c",
+        "sraschema.c",
+        "sraschema-stub.c",
+    ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgoalignutil",
+    name = "util",
     srcs = [
         "align_compare.cpp",
         "align_filter.cpp",
@@ -14,4 +14,14 @@ ncbi_library(
         "score_builder.cpp",
         "score_lookup.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

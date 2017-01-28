@@ -2,10 +2,20 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "gene_info",
+    name = "gene_info_reader",
     srcs = [
         "file_utils.cpp",
         "gene_info.cpp",
         "gene_info_reader.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

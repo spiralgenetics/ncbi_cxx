@@ -7,4 +7,20 @@ ncbi_library(
         "seqsplit__.cpp",
         "seqsplit___.cpp",
     ],
+    deps = [
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+        "//src/objects/seqset",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

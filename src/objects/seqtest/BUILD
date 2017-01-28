@@ -3,5 +3,24 @@ load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
     name = "seqtest",
-    srcs = [],
+    srcs = [
+        "seqtest__.cpp",
+        "seqtest___.cpp",
+    ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/seq",
+        "//src/objects/seqalign",
+        "//src/objects/seqfeat",
+        "//src/objects/seqloc",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

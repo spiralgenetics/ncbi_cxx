@@ -2,6 +2,29 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "soap",
+    srcs = [
+        "soap_11__.cpp",
+        "soap_11___.cpp",
+        "soap_client.cpp",
+        "soap_message.cpp",
+        "soap_readhook.cpp",
+        "soap_writehook.cpp",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "soap_server",
     srcs = ["soap_server.cpp"],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

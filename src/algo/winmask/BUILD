@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xalgowinmask",
+    name = "winmask",
     srcs = [
         "seq_masker.cpp",
         "seq_masker_cache_boost.cpp",
@@ -35,4 +35,14 @@ ncbi_library(
         "win_mask_gen_counts.cpp",
         "win_mask_util.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

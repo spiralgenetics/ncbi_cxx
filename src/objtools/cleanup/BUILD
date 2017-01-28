@@ -10,4 +10,14 @@ ncbi_library(
         "cleanup_utils.cpp",
         "newcleanupp.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

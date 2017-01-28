@@ -7,4 +7,19 @@ ncbi_library(
         "pcassay__.cpp",
         "pcassay___.cpp",
     ],
+    deps = [
+        "//src/objects/general",
+        "//src/objects/pcsubstance",
+        "//src/objects/pub",
+        "//src/objects/seqfeat",
+    ],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

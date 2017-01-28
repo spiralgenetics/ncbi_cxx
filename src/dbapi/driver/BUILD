@@ -2,7 +2,7 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "dbapi_driver",
+    name = "driver",
     srcs = [
         "dbapi_conn_factory.cpp",
         "dbapi_driver_conn_mgr.cpp",
@@ -27,4 +27,14 @@ ncbi_library(
         "public.cpp",
         "types.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

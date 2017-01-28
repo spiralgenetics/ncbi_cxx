@@ -2,11 +2,21 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
-    name = "xqueryparse",
+    name = "qparse",
     srcs = [
         "parser.cpp",
         "query_exec.cpp",
         "query_parse.cpp",
         "query_tree_print.cpp",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

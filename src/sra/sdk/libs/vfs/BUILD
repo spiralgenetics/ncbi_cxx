@@ -2,9 +2,30 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "vfs",
+    srcs = [
+        "manager.c",
+        "path.c",
+        "resolver.c",
+        "syspath.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "srapath",
     srcs = [
         "srapath.c",
         "srapath-stub.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )

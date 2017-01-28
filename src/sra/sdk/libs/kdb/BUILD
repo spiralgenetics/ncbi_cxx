@@ -2,6 +2,32 @@
 load("//:ncbi_cxx.bzl", "ncbi_library")
 
 ncbi_library(
+    name = "wkdb",
+    srcs = [
+        "btree.c",
+        "dbmgr-cmn.c",
+        "idxblk.c",
+        "wcoldata.c",
+        "wcolidx.c",
+        "wcolidx0.c",
+        "wcolidx1.c",
+        "wcolidx2.c",
+        "wcolumn.c",
+        "wdatabase.c",
+        "wdbmgr.c",
+        "widxblk.c",
+        "windex.c",
+        "wkdb.c",
+        "wmeta.c",
+        "wtable.c",
+        "wtrieidx-v1.c",
+        "wtrieidx-v2.c",
+        "wu64idx-v3.c",
+    ],
+    deps = [],
+)
+
+ncbi_library(
     name = "kdb",
     srcs = [
         "btree.c",
@@ -32,4 +58,14 @@ ncbi_library(
         "trieval-v2.c",
         "u64idx-v3.c",
     ],
+    deps = [],
+)
+
+cc_library(
+    name = "src_headers",
+    hdrs = glob([
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    visibility = ["//:__subpackages__"],
 )
