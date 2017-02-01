@@ -2140,7 +2140,7 @@ void NStr::DoubleToString(string& out_str, double value,
 {
     char buffer[kMaxDoubleStringSize];
     if (precision >= 0 ||
-        ((flags & fDoublePosix) && (::isnan(value) || !finite(value)))) {
+        ((flags & fDoublePosix) && (std::isnan(value) || !finite(value)))) {
         SIZE_TYPE n = DoubleToString(value, precision, buffer,
                                      kMaxDoubleStringSize, flags);
         buffer[n] = '\0';
@@ -2181,8 +2181,8 @@ SIZE_TYPE NStr::DoubleToString(double value, unsigned int precision,
 {
     char buffer[kMaxDoubleStringSize];
     int n = 0;
-    if ((flags & fDoublePosix) && (::isnan(value) || !finite(value))) {
-	if (::isnan(value)) {
+    if ((flags & fDoublePosix) && (std::isnan(value) || !finite(value))) {
+	if (std::isnan(value)) {
             strcpy(buffer, "NaN");
             n = 4;
         } else if (value > 0.) {

@@ -50,6 +50,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <cmath>
 
 #undef _TRACE
 #define _TRACE(arg) ((void)0)
@@ -667,14 +668,14 @@ void CObjectOStreamAsnBinary::WriteDouble2(double data, size_t digits)
     int width;
 
 #if 1
-    if (::isnan(data)) {
+    if (std::isnan(data)) {
         ThrowError(fInvalidData, "invalid double: not a number");
     }
     if (!finite(data)) {
         ThrowError(fInvalidData, "invalid double: infinite");
     }
 #else
-    if (::isnan(data)) {
+    if (std::isnan(data)) {
         strncpy(buffer,"NOT-A-NUMBER", width = 12);
     } else if (!finite(data)) {
         if (data > 0) {

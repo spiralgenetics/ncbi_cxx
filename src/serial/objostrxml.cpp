@@ -51,6 +51,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <cmath>
 
 
 #define NCBI_USE_ERRCODE_X   Serial_OStream
@@ -602,7 +603,7 @@ void CObjectOStreamXml::WriteDouble2(double data, size_t digits)
         x_WriteAsDefault();
         return;
     }
-    if (::isnan(data)) {
+    if (std::isnan(data)) {
         m_Output.PutString("NaN", 3);
         return;
     }

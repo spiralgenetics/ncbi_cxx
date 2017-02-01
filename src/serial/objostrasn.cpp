@@ -49,6 +49,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <cmath>
 
 
 #define NCBI_USE_ERRCODE_X   Serial_OStream
@@ -164,14 +165,14 @@ void CObjectOStreamAsn::WriteUint8(Uint8 data)
 void CObjectOStreamAsn::WriteDouble2(double data, size_t digits)
 {
 #if 1
-	if (::isnan(data)) {
+	if (std::isnan(data)) {
         ThrowError(fInvalidData, "invalid double: not a number");
     }
     if (!finite(data)) {
         ThrowError(fInvalidData, "invalid double: infinite");
     }
 #else
-    if (::isnan(data)) {
+    if (std::isnan(data)) {
         m_Output.PutString("NOT-A-NUMBER");
         return;
     }
