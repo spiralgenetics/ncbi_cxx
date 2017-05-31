@@ -21,6 +21,9 @@ def ncbi_library(name, srcs, includes = [], hdrs = [], deps = [], more_deps = []
                           "-Wno-all",
                           "-Wno-deprecated-declarations",
                           "-Wno-unused-but-set-parameter",
+                          "-Wno-int-to-pointer-cast",
+                          "-Wno-unused-variable",
+                          "-Wno-deprecated-declarations",
                       ],
                       # NCBI has poor dependency declarations;
                       # make sure we include symbols that we'll
